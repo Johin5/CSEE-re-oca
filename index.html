@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ConvergenSEE</title>
+    <link rel="icon" type="image/png" href="https://www.convergensee.ai/assets/img/favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              accent: '#34CC32', // Primary Green
+              'accent-hover': '#2db32b',
+              dark: '#000718', // Secondary Blue
+              'dark-lighter': '#0F1520', // Secondary Green
+            },
+            fontFamily: {
+              sans: ['Archivo', 'sans-serif'],
+            },
+            animation: {
+              'flow': 'flow 2s linear infinite',
+            }
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100..900&display=swap');
+      body {
+        font-family: 'Archivo', sans-serif;
+        background-color: #000718; /* Secondary Blue */
+        color: white;
+      }
+      /* Custom scrollbar for dashboard preview */
+      .dashboard-scroll::-webkit-scrollbar {
+        width: 6px;
+      }
+      .dashboard-scroll::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+      .dashboard-scroll::-webkit-scrollbar-thumb {
+        background: #ccc; 
+      }
+      .dashboard-scroll::-webkit-scrollbar-thumb:hover {
+        background: #888; 
+      }
+
+      /* Utility to hide scrollbar but keep functionality */
+      .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+      .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      
+      @keyframes pulse-flow {
+        0% {
+          stroke-dashoffset: 1200;
+        }
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+      
+      .animate-pulse-flow {
+        /* Blip: 60px visible, 1140px invisible gap */
+        stroke-dasharray: 60 1140;
+        animation: pulse-flow 3s linear infinite;
+        stroke-linecap: round;
+        /* Hardware acceleration hint */
+        will-change: stroke-dashoffset;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
